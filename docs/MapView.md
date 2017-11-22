@@ -40,7 +40,8 @@
 | onDidFinishLoadingStyle | `func` | `none` | `false` | This event is triggered when a style has finished loading. |
 | onFlyToComplete | `func` | `none` | `false` | This event is triggered when a fly to animation is cancelled or completed after calling flyTo |
 | onSetCameraComplete | `func` | `none` | `false` | This event is triggered once the camera is finished after calling setCamera |
-| onChangeUserTrackingMode | `func` | `none` | `false` | This event is triggered once the user tracking mode finished changing and returns the current MapboxGL.UserTrackingModes|
+| onChangeUserTrackingMode (iOS only) | `func` | `none` | `false` | This event is triggered once the user tracking mode finished changing and returns the current MapboxGL.UserTrackingModes|
+| userLocationVerticalAlignment (iOS only) | `number` | `Mapbox.UserLocationVerticalAlignment.Center` | `false` | The vertical user location on the map between (Mapbox.UserLocationVerticalAlignment.Top,Mapbox.UserLocationVerticalAlignment.Center,Mapbox.UserLocationVerticalAlignment.Bottom)|
 
 ### methods
 #### getVisibleBounds()
