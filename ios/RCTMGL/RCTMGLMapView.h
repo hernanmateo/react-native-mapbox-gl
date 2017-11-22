@@ -38,6 +38,7 @@
 @property (nonatomic, copy) NSString *reactStyleURL;
 
 @property (nonatomic, assign) int reactUserTrackingMode;
+@property (nonatomic, assign) int reactUserLocationVerticalAlignment;
 
 @property (nonatomic, assign) double heading;
 @property (nonatomic, assign) double pitch;

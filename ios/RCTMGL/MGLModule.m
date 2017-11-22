@@ -61,6 +61,11 @@ RCT_EXPORT_MODULE();
     [userTrackingModes setObject:[NSNumber numberWithInt:MGLUserTrackingModeFollowWithHeading] forKey:@"FollowWithHeading"];
     [userTrackingModes setObject:[NSNumber numberWithInt:MGLUserTrackingModeFollowWithCourse] forKey:@"FollowWithCourse"];
     
+    NSMutableDictionary *userLocationVerticalAlignment = [[NSMutableDictionary alloc] init];
+    [userLocationVerticalAlignment setObject:[NSNumber numberWithInt:MGLAnnotationVerticalAlignmentTop] forKey:@"Top"];
+    [userLocationVerticalAlignment setObject:[NSNumber numberWithInt:MGLAnnotationVerticalAlignmentCenter] forKey:@"Center"];
+    [userLocationVerticalAlignment setObject:[NSNumber numberWithInt:MGLAnnotationVerticalAlignmentBottom] forKey:@"Bottom"];
+
     // camera modes
     NSMutableDictionary *cameraModes = [[NSMutableDictionary alloc] init];
     [cameraModes setObject:[NSNumber numberWithInt:RCT_MAPBOX_CAMERA_MODE_FLIGHT] forKey:@"Flight"];
@@ -186,6 +191,7 @@ RCT_EXPORT_MODULE();
          @"StyleURL": styleURLS,
          @"EventTypes": eventTypes,
          @"UserTrackingModes": userTrackingModes,
+         @"UserLocationVerticalAlignment": userLocationVerticalAlignment,
          @"CameraModes": cameraModes,
          @"StyleSource": styleSourceConsts,
          @"InterpolationMode": interpolationModes,

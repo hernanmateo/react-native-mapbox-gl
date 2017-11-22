@@ -46,6 +46,11 @@ class MapView extends React.Component {
     userTrackingMode: PropTypes.number,
 
     /**
+     * The user location vertical alignment
+     */
+    userLocationVerticalAlignment: PropTypes.number,
+
+    /**
      * The distance from the edges of the map view’s frame to the edges of the map view’s logical viewport.
      */
     contentInset: PropTypes.oneOfType([
@@ -226,6 +231,7 @@ class MapView extends React.Component {
     logoEnabled: true,
     zoomLevel: 16,
     userTrackingMode: MapboxGL.UserTrackingModes.None,
+    userLocationVerticalAlignment: MapboxGL.UserLocationVerticalAlignment.Center,
     styleURL: MapboxGL.StyleURL.Street,
   };
 
