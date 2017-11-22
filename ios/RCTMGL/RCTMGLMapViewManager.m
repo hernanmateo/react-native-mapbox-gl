@@ -388,6 +388,11 @@ RCT_EXPORT_METHOD(setCamera:(nonnull NSNumber*)reactTag
     [self fireEvent:event withCallback:reactMapView.onMapChange];
 }
 
+-(void)mapView:(MGLMapView *)mapView didChangeUserTrackingMode:(MGLUserTrackingMode)mode animated:(BOOL)animated
+{
+    [self reactMapDidChange:mapView eventType:RCT_MAPBOX_DID_CHANGE_USER_TRACKING_MODE andPayload:@(mode)];
+}
+
 - (NSDictionary*)_makeRegionPayload:(MGLMapView*)mapView animated:(BOOL)animated
 {
     MGLPointFeature *feature = [[MGLPointFeature alloc] init];

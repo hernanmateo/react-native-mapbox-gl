@@ -37,4 +37,6 @@ NSString *const RCT_MAPBOX_OFFLINE_PROGRESS = @"offlinestatus";
 NSString *const RCT_MAPBOX_OFFLINE_ERROR = @"offlineerror";
 NSString *const RCT_MAPBOX_OFFLINE_TILE_LIMIT = @"offlinetilelimit";
 
+NSString *const RCT_MAPBOX_DID_CHANGE_USER_TRACKING_MODE = @"didchangeusertrackingmode";
+
 @end

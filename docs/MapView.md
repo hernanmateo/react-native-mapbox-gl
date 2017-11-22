@@ -40,6 +40,7 @@
 | onDidFinishLoadingStyle | `func` | `none` | `false` | This event is triggered when a style has finished loading. |
 | onFlyToComplete | `func` | `none` | `false` | This event is triggered when a fly to animation is cancelled or completed after calling flyTo |
 | onSetCameraComplete | `func` | `none` | `false` | This event is triggered once the camera is finished after calling setCamera |
+| onChangeUserTrackingMode | `func` | `none` | `false` | This event is triggered once the user tracking mode finished changing and returns the current MapboxGL.UserTrackingModes|
 
 ### methods
 #### getVisibleBounds()

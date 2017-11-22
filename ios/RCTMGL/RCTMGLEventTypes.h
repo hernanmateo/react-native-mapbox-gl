@@ -37,4 +37,6 @@ extern NSString *const RCT_MAPBOX_OFFLINE_PROGRESS;
 extern NSString *const RCT_MAPBOX_OFFLINE_ERROR;
 extern NSString *const RCT_MAPBOX_OFFLINE_TILE_LIMIT;
 
+extern NSString *const RCT_MAPBOX_DID_CHANGE_USER_TRACKING_MODE;
+
 @end

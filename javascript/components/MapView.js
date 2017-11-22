@@ -208,6 +208,11 @@ class MapView extends React.Component {
      * This event is triggered once the camera is finished after calling setCamera
      */
     onSetCameraComplete: PropTypes.func,
+
+    /**
+     * This event is triggered once the user tracking mode is changed
+     */
+    onChangeUserTrackingMode: PropTypes.func,
   };
 
   static defaultProps = {
@@ -579,6 +584,9 @@ class MapView extends React.Component {
         break;
       case MapboxGL.EventTypes.DidFinishLoadingStyle:
         propName = 'onDidFinishLoadingStyle';
+        break;
+      case MapboxGL.EventTypes.DidChangeUserTrackingMode:
+        propName = 'onChangeUserTrackingMode';
         break;
     }
 
