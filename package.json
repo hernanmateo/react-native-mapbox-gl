@@ -1,6 +1,6 @@
 {
   "name": "@mapbox/react-native-mapbox-gl",
-  "description": "A Mapbox GL react native module for creating custom maps",
+  "description": "A Mapbox GL react native module for creating custom maps - Fork by Hernan Mateo",
   "version": "6.0.1",
   "author": "Bobby Sudekum",
   "main": "./javascript/index.js",
