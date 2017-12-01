@@ -8,6 +8,7 @@
 
 #import <React/RCTComponent.h>
 #import "RCTMGLSource.h"
+#import "RCTMGLShapeSource.h"
 #import "RCTMGLPointAnnotation.h"
 #import "RCTMGLLight.h"
 
@@ -53,5 +54,7 @@
 - (CLLocationDistance)getMetersPerPixelAtLatitude:(double)latitude withZoom:(double)zoomLevel;
 - (CLLocationDistance)altitudeFromZoom:(double)zoomLevel;
 - (RCTMGLPointAnnotation*)getRCTPointAnnotation:(MGLPointAnnotation*)mglAnnotation;
+- (NSArray<RCTMGLSource *> *)getAllTouchableSources;
+- (RCTMGLSource *)getTouchableSourceWithHighestZIndex:(NSArray<RCTMGLSource *> *)touchableSources;
 
 @end

@@ -27,6 +27,7 @@ describe('Public Interface', () => {
       'VectorSource',
       'ShapeSource',
       'RasterSource',
+      'ImageSource',
 
       // constants
       'UserTrackingModes',
@@ -40,11 +41,14 @@ describe('Public Interface', () => {
       'LineTranslateAnchor',
       'CirclePitchScale',
       'CircleTranslateAnchor',
+      'CirclePitchAlignment',
       'FillExtrusionTranslateAnchor',
       'FillTranslateAnchor',
       'IconRotationAlignment',
       'IconTextFit',
+      'IconAnchor',
       'IconTranslateAnchor',
+      'IconPitchAlignment',
       'SymbolPlacement',
       'TextAnchor',
       'TextJustify',
