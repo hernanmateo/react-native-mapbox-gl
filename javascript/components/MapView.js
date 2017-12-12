@@ -48,11 +48,6 @@ class MapView extends React.Component {
     userTrackingMode: PropTypes.number,
 
     /**
-     * The user location vertical alignment
-     */
-    userLocationVerticalAlignment: PropTypes.number,
-
-    /**
      * The distance from the edges of the map view’s frame to the edges of the map view’s logical viewport.
      */
     contentInset: PropTypes.oneOfType([
@@ -219,12 +214,7 @@ class MapView extends React.Component {
     /**
      * This event is triggered once the camera is finished after calling setCamera
      */
-    onSetCameraComplete: PropTypes.func,
-
-    /**
-     * This event is triggered once the user tracking mode is changed
-     */
-    onChangeUserTrackingMode: PropTypes.func,
+    onSetCameraComplete: PropTypes.func
   };
 
   static defaultProps = {
@@ -238,7 +228,6 @@ class MapView extends React.Component {
     logoEnabled: true,
     zoomLevel: 16,
     userTrackingMode: MapboxGL.UserTrackingModes.None,
-    //userLocationVerticalAlignment: MapboxGL.UserLocationVerticalAlignment.Center,
     styleURL: MapboxGL.StyleURL.Street,
     textureMode: false
   };
@@ -598,9 +587,6 @@ class MapView extends React.Component {
         break;
       case MapboxGL.EventTypes.DidFinishLoadingStyle:
         propName = 'onDidFinishLoadingStyle';
-        break;
-      case MapboxGL.EventTypes.DidChangeUserTrackingMode:
-        propName = 'onChangeUserTrackingMode';
         break;
     }
 
