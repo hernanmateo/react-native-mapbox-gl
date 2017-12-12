@@ -18,6 +18,8 @@ const MapboxGL = NativeModules.MGLModule;
 
 export const NATIVE_MODULE_NAME = 'RCTMGLMapView';
 
+export const ANDROID_TEXTURE_NATIVE_MODULE_NAME = 'RCTMGLAndroidTextureMapView';
+
 /**
  * MapView backed by Mapbox Native GL
  */
@@ -120,11 +122,6 @@ class MapView extends React.Component {
     attributionEnabled: PropTypes.bool,
 
     /**
-     * Enable/Disable TextureMode insted of SurfaceView
-     */
-    textureMode: PropTypes.bool,
-
-    /**
      * Enable/Disable the logo on the map.
      */
     logoEnabled: PropTypes.bool,
@@ -133,6 +130,11 @@ class MapView extends React.Component {
      * Enable/Disable the compass from appearing on the map
      */
     compassEnabled: PropTypes.bool,
+
+    /**
+     * Enable/Disable TextureMode insted of SurfaceView
+     */
+    textureMode: PropTypes.bool,
 
     /**
      * Map press listener, gets called when a user presses the map
@@ -236,7 +238,7 @@ class MapView extends React.Component {
     logoEnabled: true,
     zoomLevel: 16,
     userTrackingMode: MapboxGL.UserTrackingModes.None,
-    userLocationVerticalAlignment: MapboxGL.UserLocationVerticalAlignment.Center,
+    //userLocationVerticalAlignment: MapboxGL.UserLocationVerticalAlignment.Center,
     styleURL: MapboxGL.StyleURL.Street,
     textureMode: false
   };
@@ -647,15 +649,28 @@ class MapView extends React.Component {
       onAndroidCallback: IS_ANDROID ? this._onAndroidCallback : undefined,
     };
 
-    return (
-      <RCTMGLMapView {...props} {...callbacks}>
-        {this.props.children}
-      </RCTMGLMapView>
-    );
+    if (IS_ANDROID && this.props.textureMode) {
+      return (
+        <RCTMGLAndroidTextureMapView {...props} {...callbacks}>
+          {this.props.children}
+        </RCTMGLAndroidTextureMapView>
+      );
+    } else {
+      return (
+        <RCTMGLMapView {...props} {...callbacks}>
+          {this.props.children}
+        </RCTMGLMapView>
+      );
+    }
+    
   }
 }
 
 const RCTMGLMapView = requireNativeComponent(NATIVE_MODULE_NAME, MapView, {
+  nativeOnly: { onMapChange: true, onAndroidCallback: true },
+});
+
+const RCTMGLAndroidTextureMapView = requireNativeComponent(ANDROID_TEXTURE_NATIVE_MODULE_NAME, MapView, {
   nativeOnly: { onMapChange: true, onAndroidCallback: true },
 });
 
