@@ -656,6 +656,8 @@ const RCTMGLMapView = requireNativeComponent(NATIVE_MODULE_NAME, MapView, {
   nativeOnly: { onMapChange: true, onAndroidCallback: true },
 });
 
+let RCTMGLAndroidTextureMapView;
+
 if (IS_ANDROID) {
   const RCTMGLAndroidTextureMapView = requireNativeComponent(ANDROID_TEXTURE_NATIVE_MODULE_NAME, MapView, {
     nativeOnly: { onMapChange: true, onAndroidCallback: true },
