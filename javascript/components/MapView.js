@@ -229,7 +229,7 @@ class MapView extends React.Component {
     zoomLevel: 16,
     userTrackingMode: MapboxGL.UserTrackingModes.None,
     styleURL: MapboxGL.StyleURL.Street,
-    textureMode: false
+    textureMode: false,
   };
 
   constructor (props) {
@@ -442,7 +442,7 @@ class MapView extends React.Component {
    * @example
    * this.map.setCamera({
    *   centerCoordinate: [lng, lat],
-   *   zoomLevel: 16,
+   *   zoom: 16,
    *   duration: 2000,
    * })
    *
@@ -648,7 +648,7 @@ class MapView extends React.Component {
         </RCTMGLMapView>
       );
     }
-    
+
   }
 }
 
