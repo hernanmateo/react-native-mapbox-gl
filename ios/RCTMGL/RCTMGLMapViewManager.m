@@ -61,6 +61,9 @@ RCT_EXPORT_MODULE(RCTMGLMapView)
     [mapView addGestureRecognizer:doubleTap];
     [mapView addGestureRecognizer:tap];
     [mapView addGestureRecognizer:longPress];
+
+    //Revisar si aixo esta b...
+    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"MGLMapboxMetricsEnabled"];
     
     return mapView;
 }

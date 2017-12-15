@@ -119,6 +119,8 @@ public class RCTMGLMapView extends MapView implements
     public RCTMGLMapView(Context context, RCTMGLMapViewManager manager, MapboxMapOptions options) {
         super(context, options);
 
+        MapboxTelemetry.getInstance().setTelemetryEnabled(false);
+
         super.onCreate(null);
         super.getMapAsync(this);
 
